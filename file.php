@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['action']) && $_POST['a
         // Получаем расширение файла
         $fileExtension = strtolower(pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION));
         // Генерируем случайное имя файла
-        $randomFileName = uniqid() . '.' . $fileExtension;
+        $randomFileName = uniqid() . uniqid() . uniqid() . '.' . $fileExtension;
         $uploadFile = $uploadDir . $randomFileName;
 
         // Проверка на ошибки загрузки
